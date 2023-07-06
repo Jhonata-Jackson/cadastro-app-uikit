@@ -8,6 +8,7 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
+    
     let containerView: UIView = {
         let containerView = UIView()
         containerView.translatesAutoresizingMaskIntoConstraints = false
@@ -83,11 +84,12 @@ class RegisterViewController: UIViewController {
     }()
 
     let registerButton: UIButton = {
-        let registerButton = UIButton()
+        let registerButton = UIButton(type: .system)
 
         registerButton.translatesAutoresizingMaskIntoConstraints = false
         registerButton.setTitle("Salvar", for: .normal)
         registerButton.setTitleColor(.white, for: .normal)
+        registerButton.setTitleColor(.white.withAlphaComponent(0.4), for: .disabled)
         registerButton.backgroundColor = .purple
 
         return registerButton
@@ -111,9 +113,10 @@ class RegisterViewController: UIViewController {
         emailTextField.keyboardType = .emailAddress
         passwordTextField.keyboardType = .default
         passwordTextField.isSecureTextEntry = true
-    
+        
+        registerButton.sendActions(for: .touchUpInside)
         registerButton.addTarget(self, action: #selector(tappedRegisterButton), for: .touchUpInside)
-//        registerButton.isEnabled = false
+        registerButton.isEnabled = true
 
         containerView.addSubview(titleLabel)
         containerView.addSubview(nameLabel)
