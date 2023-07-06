@@ -95,6 +95,10 @@ class RegisterVC: UIViewController {
 
         configureViews()
         configureContraints()
+        
+        nameTextField.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
     }
 
     func configureViews() {
@@ -141,7 +145,7 @@ class RegisterVC: UIViewController {
         constraints.append(emailTextField.topAnchor.constraint(equalTo: emailLabel.bottomAnchor, constant: 15))
         constraints.append(emailTextField.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 25))
         constraints.append(emailTextField.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -25))
-        constraints.append(nameTextField.heightAnchor.constraint(equalToConstant: 35))
+        constraints.append(emailTextField.heightAnchor.constraint(equalToConstant: 35))
 
         // passwordLabel
         constraints.append(passwordLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 25))
@@ -151,13 +155,31 @@ class RegisterVC: UIViewController {
         constraints.append(passwordTextField.topAnchor.constraint(equalTo: passwordLabel.bottomAnchor, constant: 15))
         constraints.append(passwordTextField.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 25))
         constraints.append(passwordTextField.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -25))
-        constraints.append(nameTextField.heightAnchor.constraint(equalToConstant: 35))
+        constraints.append(passwordTextField.heightAnchor.constraint(equalToConstant: 35))
 
         // registerButton
         constraints.append(registerButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 50))
         constraints.append(registerButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 25))
         constraints.append(registerButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -25))
+        constraints.append(registerButton.heightAnchor.constraint(equalToConstant: 35))
 
         NSLayoutConstraint.activate(constraints)
+    }
+}
+
+extension RegisterVC: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        print(#function)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        print(#function)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print(#function)
+        
+        return true
     }
 }
