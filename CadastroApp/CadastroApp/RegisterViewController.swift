@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegisterVC: UIViewController {
+class RegisterViewController: UIViewController {
     let containerView: UIView = {
         let containerView = UIView()
         containerView.translatesAutoresizingMaskIntoConstraints = false
@@ -57,6 +57,7 @@ class RegisterVC: UIViewController {
 
         nameTextField.translatesAutoresizingMaskIntoConstraints = false
         nameTextField.borderStyle = .line
+        nameTextField.placeholder = "Nome"
 
         return nameTextField
     }()
@@ -66,17 +67,19 @@ class RegisterVC: UIViewController {
 
         emailTextField.translatesAutoresizingMaskIntoConstraints = false
         emailTextField.borderStyle = .line
+        emailTextField.placeholder = "Email"
 
         return emailTextField
     }()
 
     let passwordTextField: UITextField = {
-        let emailTextField = UITextField()
+        let passwordTextField = UITextField()
 
-        emailTextField.translatesAutoresizingMaskIntoConstraints = false
-        emailTextField.borderStyle = .line
+        passwordTextField.translatesAutoresizingMaskIntoConstraints = false
+        passwordTextField.borderStyle = .line
+        passwordTextField.placeholder = "Senha"
 
-        return emailTextField
+        return passwordTextField
     }()
 
     let registerButton: UIButton = {
@@ -92,17 +95,25 @@ class RegisterVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         configureViews()
         configureContraints()
-        
-        nameTextField.delegate = self
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
     }
 
     func configureViews() {
         view.addSubview(containerView)
+        
+        nameTextField.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        
+        nameTextField.keyboardType = .default
+        emailTextField.keyboardType = .emailAddress
+        passwordTextField.keyboardType = .default
+        passwordTextField.isSecureTextEntry = true
+    
+        registerButton.addTarget(self, action: #selector(tappedRegisterButton), for: .touchUpInside)
+//        registerButton.isEnabled = false
 
         containerView.addSubview(titleLabel)
         containerView.addSubview(nameLabel)
@@ -112,6 +123,10 @@ class RegisterVC: UIViewController {
         containerView.addSubview(passwordLabel)
         containerView.addSubview(passwordTextField)
         containerView.addSubview(registerButton)
+    }
+    
+    @objc func tappedRegisterButton(sender: UIButton!){
+        print(">>> Click")
     }
 
     func configureContraints() {
@@ -161,13 +176,13 @@ class RegisterVC: UIViewController {
         constraints.append(registerButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 50))
         constraints.append(registerButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 25))
         constraints.append(registerButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -25))
-        constraints.append(registerButton.heightAnchor.constraint(equalToConstant: 35))
+        constraints.append(registerButton.heightAnchor.constraint(equalToConstant: 45))
 
         NSLayoutConstraint.activate(constraints)
     }
 }
 
-extension RegisterVC: UITextFieldDelegate {
+extension RegisterViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         print(#function)
@@ -179,7 +194,7 @@ extension RegisterVC: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         print(#function)
-        
+        textField.resignFirstResponder()
         return true
     }
 }
