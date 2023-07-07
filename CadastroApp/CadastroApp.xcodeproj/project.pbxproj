@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A205D7F92A583CCF0057EEA4 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A205D7F82A583CCF0057EEA4 /* StorageService.swift */; };
 		A22C037F2A558DEB00EAAD6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22C037E2A558DEB00EAAD6F /* AppDelegate.swift */; };
 		A22C03812A558DEB00EAAD6F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22C03802A558DEB00EAAD6F /* SceneDelegate.swift */; };
 		A22C03832A558DEB00EAAD6F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22C03822A558DEB00EAAD6F /* RegisterViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A205D7F82A583CCF0057EEA4 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		A22C037B2A558DEB00EAAD6F /* CadastroApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CadastroApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A22C037E2A558DEB00EAAD6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A22C03802A558DEB00EAAD6F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +39,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A205D7F62A583CA30057EEA4 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				A22C03822A558DEB00EAAD6F /* RegisterViewController.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		A205D7F72A583CB40057EEA4 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A205D7F82A583CCF0057EEA4 /* StorageService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		A22C03722A558DEA00EAAD6F = {
 			isa = PBXGroup;
 			children = (
@@ -56,10 +74,11 @@
 		A22C037D2A558DEB00EAAD6F /* CadastroApp */ = {
 			isa = PBXGroup;
 			children = (
-				A2FD83B12A578C7200278AB6 /* Styles */,
+				A205D7F72A583CB40057EEA4 /* Service */,
+				A205D7F62A583CA30057EEA4 /* Screen */,
+				A2FD83B12A578C7200278AB6 /* Style */,
 				A22C037E2A558DEB00EAAD6F /* AppDelegate.swift */,
 				A22C03802A558DEB00EAAD6F /* SceneDelegate.swift */,
-				A22C03822A558DEB00EAAD6F /* RegisterViewController.swift */,
 				A22C03872A558DEB00EAAD6F /* Assets.xcassets */,
 				A22C03892A558DEB00EAAD6F /* LaunchScreen.storyboard */,
 				A22C038C2A558DEB00EAAD6F /* Info.plist */,
@@ -67,12 +86,12 @@
 			path = CadastroApp;
 			sourceTree = "<group>";
 		};
-		A2FD83B12A578C7200278AB6 /* Styles */ = {
+		A2FD83B12A578C7200278AB6 /* Style */ = {
 			isa = PBXGroup;
 			children = (
 				A2FD83B22A578CA200278AB6 /* RegisterStyle.swift */,
 			);
-			path = Styles;
+			path = Style;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A205D7F92A583CCF0057EEA4 /* StorageService.swift in Sources */,
 				A2FD83B32A578CA200278AB6 /* RegisterStyle.swift in Sources */,
 				A22C03832A558DEB00EAAD6F /* RegisterViewController.swift in Sources */,
 				A22C037F2A558DEB00EAAD6F /* AppDelegate.swift in Sources */,
