@@ -21,8 +21,8 @@ class RegisterViewController: UIViewController {
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.text = "Cadastrar"
-        titleLabel.textColor = .black
-        titleLabel.font = titleLabel.font.withSize(30)
+        titleLabel.applyStyle(.title)
+        
         return titleLabel
     }()
 
@@ -30,8 +30,8 @@ class RegisterViewController: UIViewController {
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.text = "Digite seu nome"
-        titleLabel.textColor = .black
-        titleLabel.font = titleLabel.font.withSize(20)
+        titleLabel.applyStyle(.subTitle)
+        
         return titleLabel
     }()
 
@@ -39,8 +39,8 @@ class RegisterViewController: UIViewController {
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.text = "Digite seu email"
-        titleLabel.textColor = .black
-        titleLabel.font = titleLabel.font.withSize(20)
+        titleLabel.applyStyle(.subTitle)
+        
         return titleLabel
     }()
 
@@ -48,8 +48,8 @@ class RegisterViewController: UIViewController {
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.text = "Digite sua senha"
-        titleLabel.textColor = .black
-        titleLabel.font = titleLabel.font.withSize(20)
+        titleLabel.applyStyle(.subTitle)
+        
         return titleLabel
     }()
 
