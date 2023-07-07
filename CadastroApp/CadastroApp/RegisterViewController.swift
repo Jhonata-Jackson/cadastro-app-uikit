@@ -160,10 +160,14 @@ class RegisterViewController: UIViewController {
     }
     
     func validateForm() {
+        let passwordCount = passwordTextField.text?.count ?? 0
         
-        if(nameTextField.hasText && emailTextField.hasText && passwordTextField.hasText) {
+        if(nameTextField.hasText && emailTextField.hasText && passwordTextField.hasText && passwordCount > 5) {
             registerButton.isEnabled = true
+            return
         }
+        
+        registerButton.isEnabled = false
     }
 
     func configureContraints() {
@@ -233,6 +237,11 @@ extension RegisterViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        
+        if(registerButton.isEnabled){
+            self.tappedRegisterButton(sender: registerButton)
+        }
+        
         return true
     }
 }
