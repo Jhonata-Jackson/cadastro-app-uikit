@@ -23,41 +23,57 @@ class RegisterViewController: UIViewController {
         titleLabel.text = "Cadastrar"
         titleLabel.applyStyle(.title)
         
+        let boldFont = UIFont.boldSystemFont(ofSize: titleLabel.font.pointSize)
+        let boldFontDescriptor = titleLabel.font.fontDescriptor.withSymbolicTraits(.traitBold)
+        titleLabel.font = UIFont(descriptor: boldFontDescriptor!, size: titleLabel.font.pointSize)
+        
         return titleLabel
     }()
 
     let nameLabel: UILabel = {
-        let titleLabel = UILabel()
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.text = "Digite seu nome"
-        titleLabel.applyStyle(.subTitle)
+        let nameLabel = UILabel()
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        nameLabel.text = "Digite seu nome"
+        nameLabel.applyStyle(.subTitle)
         
-        return titleLabel
+        let boldFont = UIFont.boldSystemFont(ofSize: nameLabel.font.pointSize)
+        let boldFontDescriptor = nameLabel.font.fontDescriptor.withSymbolicTraits(.traitBold)
+        nameLabel.font = UIFont(descriptor: boldFontDescriptor!, size: nameLabel.font.pointSize)
+
+        return nameLabel
     }()
 
     let emailLabel: UILabel = {
-        let titleLabel = UILabel()
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.text = "Digite seu email"
-        titleLabel.applyStyle(.subTitle)
+        let emailLabel = UILabel()
+        emailLabel.translatesAutoresizingMaskIntoConstraints = false
+        emailLabel.text = "Digite seu email"
+        emailLabel.applyStyle(.subTitle)
         
-        return titleLabel
+        let boldFont = UIFont.boldSystemFont(ofSize: emailLabel.font.pointSize)
+        let boldFontDescriptor = emailLabel.font.fontDescriptor.withSymbolicTraits(.traitBold)
+        emailLabel.font = UIFont(descriptor: boldFontDescriptor!, size: emailLabel.font.pointSize)
+        
+        return emailLabel
     }()
 
     let passwordLabel: UILabel = {
-        let titleLabel = UILabel()
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.text = "Digite sua senha"
-        titleLabel.applyStyle(.subTitle)
+        let passwordLabel = UILabel()
+        passwordLabel.translatesAutoresizingMaskIntoConstraints = false
+        passwordLabel.text = "Digite sua senha"
+        passwordLabel.applyStyle(.subTitle)
         
-        return titleLabel
+        let boldFont = UIFont.boldSystemFont(ofSize: passwordLabel.font.pointSize)
+        let boldFontDescriptor = passwordLabel.font.fontDescriptor.withSymbolicTraits(.traitBold)
+        passwordLabel.font = UIFont(descriptor: boldFontDescriptor!, size: passwordLabel.font.pointSize)
+        
+        return passwordLabel
     }()
 
     let nameTextField: UITextField = {
         let nameTextField = UITextField()
 
         nameTextField.translatesAutoresizingMaskIntoConstraints = false
-        nameTextField.borderStyle = .line
+        nameTextField.borderStyle = .roundedRect
         nameTextField.placeholder = "Nome"
 
         return nameTextField
@@ -67,7 +83,7 @@ class RegisterViewController: UIViewController {
         let emailTextField = UITextField()
 
         emailTextField.translatesAutoresizingMaskIntoConstraints = false
-        emailTextField.borderStyle = .line
+        emailTextField.borderStyle = .roundedRect
         emailTextField.placeholder = "Email"
 
         return emailTextField
@@ -77,7 +93,7 @@ class RegisterViewController: UIViewController {
         let passwordTextField = UITextField()
 
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
-        passwordTextField.borderStyle = .line
+        passwordTextField.borderStyle = .roundedRect
         passwordTextField.placeholder = "Senha"
 
         return passwordTextField
@@ -90,7 +106,10 @@ class RegisterViewController: UIViewController {
         registerButton.setTitle("Salvar", for: .normal)
         registerButton.setTitleColor(.white, for: .normal)
         registerButton.setTitleColor(.white.withAlphaComponent(0.4), for: .disabled)
+        registerButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         registerButton.backgroundColor = .purple
+        registerButton.layer.cornerRadius = 10
+        registerButton.clipsToBounds = true
 
         return registerButton
     }()
@@ -110,13 +129,19 @@ class RegisterViewController: UIViewController {
         passwordTextField.delegate = self
         
         nameTextField.keyboardType = .default
+        nameTextField.autocorrectionType = .no
+        
         emailTextField.keyboardType = .emailAddress
+        emailTextField.autocapitalizationType = .none
+        nameTextField.autocorrectionType = .no
+        
         passwordTextField.keyboardType = .default
+        passwordTextField.autocapitalizationType = .none
         passwordTextField.isSecureTextEntry = true
         
         registerButton.sendActions(for: .touchUpInside)
         registerButton.addTarget(self, action: #selector(tappedRegisterButton), for: .touchUpInside)
-        registerButton.isEnabled = true
+        registerButton.isEnabled = false
 
         containerView.addSubview(titleLabel)
         containerView.addSubview(nameLabel)
@@ -129,7 +154,16 @@ class RegisterViewController: UIViewController {
     }
     
     @objc func tappedRegisterButton(sender: UIButton!){
-        print(">>> Click")
+        print(">>> name: \(nameTextField.text!)")
+        print(">>> email: \(emailTextField.text!)")
+        print(">>> password: \(passwordTextField.text!)")
+    }
+    
+    func validateForm() {
+        
+        if(nameTextField.hasText && emailTextField.hasText && passwordTextField.hasText) {
+            registerButton.isEnabled = true
+        }
     }
 
     func configureContraints() {
@@ -188,15 +222,16 @@ class RegisterViewController: UIViewController {
 extension RegisterViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        print(#function)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        print(#function)
+    }
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        self.validateForm()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print(#function)
         textField.resignFirstResponder()
         return true
     }
