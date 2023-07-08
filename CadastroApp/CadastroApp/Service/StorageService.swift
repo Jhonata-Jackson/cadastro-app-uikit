@@ -13,25 +13,21 @@ struct StorageService {
     private let userDefaults: UserDefaults
     private let KEY_PREFIX = "register_"
 
-    private init() {
+    init() {
         userDefaults = UserDefaults.standard
     }
     
-    private func prepareKey(_ key: String) -> String {
-        return "\(self.KEY_PREFIX)\(key)"
-    }
-    
-    func setItem(key: String, value: String) {
-        self.userDefaults.set(value, forKey: self.prepareKey(key))
+    func setItem(_ key: String, _ value: String) {
+        self.userDefaults.set(value, forKey: "\(self.KEY_PREFIX)\(key)")
         self.userDefaults.synchronize()
     }
     
-    func getItem(key: String) -> String? {
-        return self.userDefaults.string(forKey: self.prepareKey(key))
+    func getItem(_ key: String) -> String? {
+        return self.userDefaults.string(forKey: "\(self.KEY_PREFIX)\(key)")
     }
 
-    func removeItem(key: String) {
-        self.userDefaults.removeObject(forKey: self.prepareKey(key))
+    func removeItem(_ key: String) {
+        self.userDefaults.removeObject(forKey: "\(self.KEY_PREFIX)\(key)")
         self.userDefaults.synchronize()
     }
     
@@ -53,9 +49,9 @@ struct StorageService {
            UserDefaults.standard.removePersistentDomain(forName: suiteName)
            UserDefaults.standard.synchronize()
            
-           print(">> Storage has been successfully cleared!")
+           print(">> Storage cleared!")
         } else {
-           print(">> Invalid suit identifier of UserDefaults.")
+           print(">> Storage clear error!")
         }
     }
 }

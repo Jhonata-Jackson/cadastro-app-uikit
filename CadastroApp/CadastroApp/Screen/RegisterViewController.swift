@@ -9,6 +9,8 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
+    let services = Services()
+    
     let containerView: UIView = {
         let containerView = UIView()
         containerView.translatesAutoresizingMaskIntoConstraints = false
@@ -154,9 +156,12 @@ class RegisterViewController: UIViewController {
     }
     
     @objc func tappedRegisterButton(sender: UIButton!){
-        print(">>> name: \(nameTextField.text!)")
-        print(">>> email: \(emailTextField.text!)")
-        print(">>> password: \(passwordTextField.text!)")
+        let userData = ["name": nameTextField.text, "email": emailTextField.text, "password": passwordTextField.text]
+
+        self.services.storageSetItem(
+            key: emailTextField.text!,
+            value: String(describing: userData)
+        )
     }
     
     func validateForm() {
