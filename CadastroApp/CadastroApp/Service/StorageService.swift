@@ -8,31 +8,30 @@
 import Foundation
 
 struct StorageService {
-    static let shared = StorageService()
 
-    private let userDefaults: UserDefaults
+    private let storageEngine: UserDefaults
     private let KEY_PREFIX = "register_"
 
-    init() {
-        userDefaults = UserDefaults.standard
+    init(storageEngine: UserDefaults) {
+        self.storageEngine = storageEngine
     }
     
     func setItem(_ key: String, _ value: String) {
-        self.userDefaults.set(value, forKey: "\(self.KEY_PREFIX)\(key)")
-        self.userDefaults.synchronize()
+        self.storageEngine.set(value, forKey: "\(self.KEY_PREFIX)\(key)")
+        self.storageEngine.synchronize()
     }
     
     func getItem(_ key: String) -> String? {
-        return self.userDefaults.string(forKey: "\(self.KEY_PREFIX)\(key)")
+        return self.storageEngine.string(forKey: "\(self.KEY_PREFIX)\(key)")
     }
 
     func removeItem(_ key: String) {
-        self.userDefaults.removeObject(forKey: "\(self.KEY_PREFIX)\(key)")
-        self.userDefaults.synchronize()
+        self.storageEngine.removeObject(forKey: "register_secondKey")
+        self.storageEngine.synchronize()
     }
     
     func keys() -> [String] {
-        let allData = self.userDefaults.dictionaryRepresentation()
+        let allData = self.storageEngine.dictionaryRepresentation()
         let keys = allData.keys
         
         return keys.filter { key in

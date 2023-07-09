@@ -9,18 +9,36 @@
 /* Begin PBXBuildFile section */
 		A205D7F92A583CCF0057EEA4 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A205D7F82A583CCF0057EEA4 /* StorageService.swift */; };
 		A2073B992A59B49D000C5B4A /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2073B982A59B49D000C5B4A /* Services.swift */; };
+		A2073BA22A59B94B000C5B4A /* CadastroAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2073BA12A59B94B000C5B4A /* CadastroAppTests.swift */; };
+		A2073BA92A59B96C000C5B4A /* StorageServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2073BA82A59B96C000C5B4A /* StorageServiceTest.swift */; };
+		A2073BAB2A59BF74000C5B4A /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2073BAA2A59BF74000C5B4A /* UtilityFunctions.swift */; };
 		A22C037F2A558DEB00EAAD6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22C037E2A558DEB00EAAD6F /* AppDelegate.swift */; };
 		A22C03812A558DEB00EAAD6F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22C03802A558DEB00EAAD6F /* SceneDelegate.swift */; };
 		A22C03832A558DEB00EAAD6F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22C03822A558DEB00EAAD6F /* RegisterViewController.swift */; };
 		A22C03882A558DEB00EAAD6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A22C03872A558DEB00EAAD6F /* Assets.xcassets */; };
 		A22C038B2A558DEB00EAAD6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A22C03892A558DEB00EAAD6F /* LaunchScreen.storyboard */; };
+		A24B3DEF2A5B754E00E1E5E5 /* UserRegisterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24B3DEE2A5B754E00E1E5E5 /* UserRegisterTest.swift */; };
 		A2F793442A586E5C00A988A4 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F793432A586E5C00A988A4 /* UserModel.swift */; };
 		A2FD83B32A578CA200278AB6 /* RegisterStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FD83B22A578CA200278AB6 /* RegisterStyle.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A2073BA32A59B94B000C5B4A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A22C03732A558DEA00EAAD6F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A22C037A2A558DEB00EAAD6F;
+			remoteInfo = CadastroApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		A205D7F82A583CCF0057EEA4 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		A2073B982A59B49D000C5B4A /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		A2073B9F2A59B94B000C5B4A /* CadastroAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CadastroAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2073BA12A59B94B000C5B4A /* CadastroAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroAppTests.swift; sourceTree = "<group>"; };
+		A2073BA82A59B96C000C5B4A /* StorageServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServiceTest.swift; sourceTree = "<group>"; };
+		A2073BAA2A59BF74000C5B4A /* UtilityFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityFunctions.swift; sourceTree = "<group>"; };
 		A22C037B2A558DEB00EAAD6F /* CadastroApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CadastroApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A22C037E2A558DEB00EAAD6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A22C03802A558DEB00EAAD6F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,11 +46,19 @@
 		A22C03872A558DEB00EAAD6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A22C038A2A558DEB00EAAD6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A22C038C2A558DEB00EAAD6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A24B3DEE2A5B754E00E1E5E5 /* UserRegisterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegisterTest.swift; sourceTree = "<group>"; };
 		A2F793432A586E5C00A988A4 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		A2FD83B22A578CA200278AB6 /* RegisterStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A2073B9C2A59B94B000C5B4A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A22C03782A558DEB00EAAD6F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -60,10 +86,21 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		A2073BA02A59B94B000C5B4A /* CadastroAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				A2073BA12A59B94B000C5B4A /* CadastroAppTests.swift */,
+				A2073BA82A59B96C000C5B4A /* StorageServiceTest.swift */,
+				A24B3DEE2A5B754E00E1E5E5 /* UserRegisterTest.swift */,
+			);
+			path = CadastroAppTests;
+			sourceTree = "<group>";
+		};
 		A22C03722A558DEA00EAAD6F = {
 			isa = PBXGroup;
 			children = (
 				A22C037D2A558DEB00EAAD6F /* CadastroApp */,
+				A2073BA02A59B94B000C5B4A /* CadastroAppTests */,
 				A22C037C2A558DEB00EAAD6F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				A22C037B2A558DEB00EAAD6F /* CadastroApp.app */,
+				A2073B9F2A59B94B000C5B4A /* CadastroAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				A2FD83B22A578CA200278AB6 /* RegisterStyle.swift */,
+				A2073BAA2A59BF74000C5B4A /* UtilityFunctions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -111,6 +150,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A2073B9E2A59B94B000C5B4A /* CadastroAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A2073BA72A59B94B000C5B4A /* Build configuration list for PBXNativeTarget "CadastroAppTests" */;
+			buildPhases = (
+				A2073B9B2A59B94B000C5B4A /* Sources */,
+				A2073B9C2A59B94B000C5B4A /* Frameworks */,
+				A2073B9D2A59B94B000C5B4A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A2073BA42A59B94B000C5B4A /* PBXTargetDependency */,
+			);
+			name = CadastroAppTests;
+			productName = CadastroAppTests;
+			productReference = A2073B9F2A59B94B000C5B4A /* CadastroAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		A22C037A2A558DEB00EAAD6F /* CadastroApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A22C038F2A558DEB00EAAD6F /* Build configuration list for PBXNativeTarget "CadastroApp" */;
@@ -138,6 +195,10 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					A2073B9E2A59B94B000C5B4A = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = A22C037A2A558DEB00EAAD6F;
+					};
 					A22C037A2A558DEB00EAAD6F = {
 						CreatedOnToolsVersion = 14.3;
 					};
@@ -157,11 +218,19 @@
 			projectRoot = "";
 			targets = (
 				A22C037A2A558DEB00EAAD6F /* CadastroApp */,
+				A2073B9E2A59B94B000C5B4A /* CadastroAppTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A2073B9D2A59B94B000C5B4A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A22C03792A558DEB00EAAD6F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -174,11 +243,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A2073B9B2A59B94B000C5B4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2073BA22A59B94B000C5B4A /* CadastroAppTests.swift in Sources */,
+				A2073BA92A59B96C000C5B4A /* StorageServiceTest.swift in Sources */,
+				A24B3DEF2A5B754E00E1E5E5 /* UserRegisterTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A22C03772A558DEB00EAAD6F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A205D7F92A583CCF0057EEA4 /* StorageService.swift in Sources */,
+				A2073BAB2A59BF74000C5B4A /* UtilityFunctions.swift in Sources */,
 				A2FD83B32A578CA200278AB6 /* RegisterStyle.swift in Sources */,
 				A22C03832A558DEB00EAAD6F /* RegisterViewController.swift in Sources */,
 				A2073B992A59B49D000C5B4A /* Services.swift in Sources */,
@@ -189,6 +269,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A2073BA42A59B94B000C5B4A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A22C037A2A558DEB00EAAD6F /* CadastroApp */;
+			targetProxy = A2073BA32A59B94B000C5B4A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A22C03892A558DEB00EAAD6F /* LaunchScreen.storyboard */ = {
@@ -202,6 +290,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A2073BA52A59B94B000C5B4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jjpontodev.CadastroAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CadastroApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CadastroApp";
+			};
+			name = Debug;
+		};
+		A2073BA62A59B94B000C5B4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jjpontodev.CadastroAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CadastroApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CadastroApp";
+			};
+			name = Release;
+		};
 		A22C038D2A558DEB00EAAD6F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -371,6 +501,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A2073BA72A59B94B000C5B4A /* Build configuration list for PBXNativeTarget "CadastroAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2073BA52A59B94B000C5B4A /* Debug */,
+				A2073BA62A59B94B000C5B4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A22C03762A558DEA00EAAD6F /* Build configuration list for PBXProject "CadastroApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -9,7 +9,7 @@ import Foundation
 
 class Services {
     
-    private let storageService = StorageService()
+    private let storageService = StorageService(storageEngine: UserDefaults.standard)
     
     func storageSetItem(key: String, value: String) {
         return self.storageService.setItem(key, value)

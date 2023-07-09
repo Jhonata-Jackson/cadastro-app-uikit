@@ -5,7 +5,7 @@
 //  Created by Jhonata Jackson on 07/07/23.
 //
 
-struct userModel: Decodable {
+struct UserModel: Codable {
     let name: String
     let email: String
     let password: String
