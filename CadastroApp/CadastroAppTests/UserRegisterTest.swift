@@ -11,18 +11,18 @@ import XCTest
 final class UserRegisterTest: XCTestCase {
     
     func testUserRegister() throws {
-        let services = Services()
-        services.storageClear()
+        let sut = Services()
+        sut.storageClear()
 
         let firstKey = "firstKey"
         let userModel = UserModel(name: "user", email: "user@gmail.com", password: "123456")
         let jsonData = try JSONEncoder().encode(userModel)
 
-        services.storageSetItem(key: firstKey, value:  String(data: jsonData, encoding: .utf8)!)
+        sut.storageSetItem(key: firstKey, value:  String(data: jsonData, encoding: .utf8)!)
 
-        let result = services.storageGetItem(key: firstKey)
+        let result = sut.storageGetItem(key: firstKey)
         let resultModel = try parseJsonToModel(json: result!, model: UserModel.self)
-        let storageKeys = services.storageKeys()
+        let storageKeys = sut.storageKeys()
 
         XCTAssertTrue(storageKeys.count == 1)
         XCTAssertEqual(resultModel.name, "user")
@@ -31,7 +31,7 @@ final class UserRegisterTest: XCTestCase {
     }
     
     func testRemoveUserRegister() throws {
-        let services = Services()
+        let sut = Services()
 
         let firstKey = "firstKey"
         let secondKey = "secondKey"
@@ -40,15 +40,15 @@ final class UserRegisterTest: XCTestCase {
         let firstJsonData = try JSONEncoder().encode(firstUser)
         let secondJsonData = try JSONEncoder().encode(secondUser)
         
-        services.storageClear()
-        services.storageSetItem(key: firstKey, value: String(data: firstJsonData, encoding: .utf8)!)
-        services.storageSetItem(key: secondKey, value: String(data: secondJsonData, encoding: .utf8)!)
+        sut.storageClear()
+        sut.storageSetItem(key: firstKey, value: String(data: firstJsonData, encoding: .utf8)!)
+        sut.storageSetItem(key: secondKey, value: String(data: secondJsonData, encoding: .utf8)!)
     
-        let firstResult = services.storageGetItem(key: firstKey)
+        let firstResult = sut.storageGetItem(key: firstKey)
         let firstResultModel = try parseJsonToModel(json: firstResult!, model: UserModel.self)
-        let secondResult = services.storageGetItem(key: secondKey)
+        let secondResult = sut.storageGetItem(key: secondKey)
         let secondResultModel = try parseJsonToModel(json: secondResult!, model: UserModel.self)
-        var storageKeys = services.storageKeys()
+        var storageKeys = sut.storageKeys()
         
         XCTAssertTrue(storageKeys.count == 2)
         XCTAssertEqual(firstResultModel.name, firstUser.name)
@@ -59,8 +59,8 @@ final class UserRegisterTest: XCTestCase {
         XCTAssertEqual(secondResultModel.email, firstUser.email)
         XCTAssertEqual(secondResultModel.password, firstUser.password)
         
-        services.storageRemoveItem(key: secondKey)
-        storageKeys = services.storageKeys()
+        sut.storageRemoveItem(key: secondKey)
+        storageKeys = sut.storageKeys()
         
         XCTAssertTrue(storageKeys.count == 1)
         XCTAssertEqual(firstResultModel.name, firstUser.name)

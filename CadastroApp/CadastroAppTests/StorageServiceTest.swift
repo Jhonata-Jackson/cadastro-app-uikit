@@ -11,20 +11,20 @@ import XCTest
 final class StorageServiceTest: XCTestCase {
     
     func testSaveDataOnStorage() throws {
-        let services = Services()
+        let sut = StorageService(storageEngine: UserDefaults.standard)
 
         let firstKey = "firstKey"
         let secondKey = "secondKey"
         let firstValue = "firstValue"
         let secondValue = "secondValue"
 
-        services.storageClear()
-        services.storageSetItem(key: firstKey, value: firstValue)
-        services.storageSetItem(key: secondKey, value: secondValue)
+        sut.clear()
+        sut.setItem(firstKey, firstValue)
+        sut.setItem(secondKey, secondValue)
 
-        let firstResult = services.storageGetItem(key: firstKey)
-        let secondResult = services.storageGetItem(key: secondKey)
-        let storageKeys = services.storageKeys()
+        let firstResult = sut.getItem(firstKey)
+        let secondResult = sut.getItem(secondKey)
+        var storageKeys = sut.keys()
 
         XCTAssertTrue(storageKeys.count == 2)
         XCTAssertEqual(firstResult, firstValue)
@@ -32,27 +32,27 @@ final class StorageServiceTest: XCTestCase {
     }
     
     func testRemoveDataOnStorage() throws {
-        let storageService = StorageService(storageEngine: UserDefaults.standard)
+        let sut = StorageService(storageEngine: UserDefaults.standard)
         
         let firstKey = "firstKey"
         let secondKey = "secondKey"
         let firstValue = "firstValue"
         let secondValue = "secondValue"
         
-        storageService.clear()
-        storageService.setItem(firstKey, firstValue)
-        storageService.setItem(secondKey, secondValue)
+        sut.clear()
+        sut.setItem(firstKey, firstValue)
+        sut.setItem(secondKey, secondValue)
     
-        let firstResult = storageService.getItem(firstKey)
-        let secondResult = storageService.getItem(secondKey)
-        var storageKeys = storageService.keys()
+        let firstResult = sut.getItem(firstKey)
+        let secondResult = sut.getItem(secondKey)
+        var storageKeys = sut.keys()
         
         XCTAssertTrue(storageKeys.count == 2)
         XCTAssertEqual(firstResult, firstValue)
         XCTAssertEqual(secondResult, secondValue)
         
-        storageService.removeItem(secondKey)
-        storageKeys = storageService.keys()
+        sut.removeItem(secondKey)
+        storageKeys = sut.keys()
         
         XCTAssertTrue(storageKeys.count == 1)
         XCTAssertEqual(firstResult, firstValue)
