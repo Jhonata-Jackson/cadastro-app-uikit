@@ -123,7 +123,7 @@ class RegisterViewController: UIViewController {
         configureContraints()
     }
 
-    func configureViews() {
+    private func configureViews() {
         view.addSubview(containerView)
         
         nameTextField.delegate = self

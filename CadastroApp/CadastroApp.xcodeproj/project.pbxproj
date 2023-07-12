@@ -18,6 +18,8 @@
 		A22C03882A558DEB00EAAD6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A22C03872A558DEB00EAAD6F /* Assets.xcassets */; };
 		A22C038B2A558DEB00EAAD6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A22C03892A558DEB00EAAD6F /* LaunchScreen.storyboard */; };
 		A24B3DEF2A5B754E00E1E5E5 /* UserRegisterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24B3DEE2A5B754E00E1E5E5 /* UserRegisterTest.swift */; };
+		A27752942A5ECFE20019EC9C /* ListRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27752932A5ECFE20019EC9C /* ListRegisterViewController.swift */; };
+		A27752972A5ED1A30019EC9C /* RegisterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27752962A5ED1A30019EC9C /* RegisterCell.swift */; };
 		A2F793442A586E5C00A988A4 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F793432A586E5C00A988A4 /* UserModel.swift */; };
 		A2FD83B32A578CA200278AB6 /* RegisterStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FD83B22A578CA200278AB6 /* RegisterStyle.swift */; };
 /* End PBXBuildFile section */
@@ -47,6 +49,8 @@
 		A22C038A2A558DEB00EAAD6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A22C038C2A558DEB00EAAD6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A24B3DEE2A5B754E00E1E5E5 /* UserRegisterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegisterTest.swift; sourceTree = "<group>"; };
+		A27752932A5ECFE20019EC9C /* ListRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRegisterViewController.swift; sourceTree = "<group>"; };
+		A27752962A5ED1A30019EC9C /* RegisterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCell.swift; sourceTree = "<group>"; };
 		A2F793432A586E5C00A988A4 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		A2FD83B22A578CA200278AB6 /* RegisterStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				A22C03822A558DEB00EAAD6F /* RegisterViewController.swift */,
+				A27752932A5ECFE20019EC9C /* ListRegisterViewController.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -117,6 +122,7 @@
 		A22C037D2A558DEB00EAAD6F /* CadastroApp */ = {
 			isa = PBXGroup;
 			children = (
+				A27752952A5ED17A0019EC9C /* View */,
 				A2F793422A586E3500A988A4 /* Model */,
 				A205D7F72A583CB40057EEA4 /* Service */,
 				A205D7F62A583CA30057EEA4 /* Screen */,
@@ -128,6 +134,14 @@
 				A22C038C2A558DEB00EAAD6F /* Info.plist */,
 			);
 			path = CadastroApp;
+			sourceTree = "<group>";
+		};
+		A27752952A5ED17A0019EC9C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A27752962A5ED1A30019EC9C /* RegisterCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		A2F793422A586E3500A988A4 /* Model */ = {
@@ -257,11 +271,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A27752972A5ED1A30019EC9C /* RegisterCell.swift in Sources */,
 				A205D7F92A583CCF0057EEA4 /* StorageService.swift in Sources */,
 				A2073BAB2A59BF74000C5B4A /* UtilityFunctions.swift in Sources */,
 				A2FD83B32A578CA200278AB6 /* RegisterStyle.swift in Sources */,
 				A22C03832A558DEB00EAAD6F /* RegisterViewController.swift in Sources */,
 				A2073B992A59B49D000C5B4A /* Services.swift in Sources */,
+				A27752942A5ECFE20019EC9C /* ListRegisterViewController.swift in Sources */,
 				A22C037F2A558DEB00EAAD6F /* AppDelegate.swift in Sources */,
 				A2F793442A586E5C00A988A4 /* UserModel.swift in Sources */,
 				A22C03812A558DEB00EAAD6F /* SceneDelegate.swift in Sources */,
