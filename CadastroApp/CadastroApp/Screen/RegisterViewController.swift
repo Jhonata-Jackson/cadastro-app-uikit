@@ -9,6 +9,8 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
+    let services = Services()
+    
     let containerView: UIView = {
         let containerView = UIView()
         containerView.translatesAutoresizingMaskIntoConstraints = false
@@ -154,15 +156,20 @@ class RegisterViewController: UIViewController {
     }
     
     @objc func tappedRegisterButton(sender: UIButton!){
-        print(">>> name: \(nameTextField.text!)")
-        print(">>> email: \(emailTextField.text!)")
-        print(">>> password: \(passwordTextField.text!)")
+        let userData = ["name": nameTextField.text, "email": emailTextField.text, "password": passwordTextField.text]
+
+        self.services.storageSetItem(
+            key: emailTextField.text!,
+            value: String(describing: userData)
+        )
     }
     
     func validateForm() {
-        let passwordCount = passwordTextField.text?.count ?? 0
-        
-        if(nameTextField.hasText && emailTextField.hasText && passwordTextField.hasText && passwordCount > 5) {
+        let isValidName = nameTextField.hasText
+        let isValidEmail =  emailTextField.hasText && (emailTextField.text ?? "").contains("@")
+        let isValidPassword = passwordTextField.hasText && passwordTextField.text?.count ?? 0 > 5
+
+        if isValidName && isValidEmail && isValidPassword {
             registerButton.isEnabled = true
             return
         }
