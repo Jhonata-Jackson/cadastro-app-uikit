@@ -30,6 +30,26 @@ final class UserRegisterTest: XCTestCase {
         XCTAssertEqual(resultModel.password, "123456")
     }
     
+    func testGetAllUsersRegisters() throws {
+        let sut = Services()
+
+        let firstKey = "firstKey"
+        let secondKey = "secondKey"
+        let firstUser = UserModel(name: "user", email: "user@gmail.com", password: "123456")
+        let secondUser = UserModel(name: "user", email: "user@gmail.com", password: "123456")
+        let firstJsonData = try JSONEncoder().encode(firstUser)
+        let secondJsonData = try JSONEncoder().encode(secondUser)
+        
+        sut.storageClear()
+        sut.storageSetItem(key: firstKey, value: String(data: firstJsonData, encoding: .utf8)!)
+        sut.storageSetItem(key: secondKey, value: String(data: secondJsonData, encoding: .utf8)!)
+        
+        let values = try sut.storageGetAll()
+        print(">>>>> values: \(values)")
+
+       
+    }
+    
     func testRemoveUserRegister() throws {
         let sut = Services()
 

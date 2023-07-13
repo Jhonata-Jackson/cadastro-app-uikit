@@ -35,8 +35,8 @@ class ListRegisterViewController: UIViewController {
         var constraints = [NSLayoutConstraint]()
 
         // tableView
-        constraints.append(tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor))
-        constraints.append(tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor))
+        constraints.append(tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor))
+        constraints.append(tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor))
         constraints.append(tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor))
         constraints.append(tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor))
 

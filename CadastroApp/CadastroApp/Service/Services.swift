@@ -30,5 +30,22 @@ class Services {
     func storageClear() {
         return self.storageService.clear()
     }
+
+    func getAllRegisters() throws -> [UserModel]? {
+        let keys = self.storageKeys()
+        
+        if(keys.count > 0) {
+            return try keys.map {
+                self.storageGetItem(key: $0)!
+            }.map {
+                let jsonData = Data($0.utf8)
+            
+                let people = try JSONDecoder().decode(UserModel.self, from: jsonData)
+                return people
+            }
+        }
+        
+        return []
+    }
     
 }

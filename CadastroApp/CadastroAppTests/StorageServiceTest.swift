@@ -24,7 +24,7 @@ final class StorageServiceTest: XCTestCase {
 
         let firstResult = sut.getItem(firstKey)
         let secondResult = sut.getItem(secondKey)
-        var storageKeys = sut.keys()
+        let storageKeys = sut.keys()
 
         XCTAssertTrue(storageKeys.count == 2)
         XCTAssertEqual(firstResult, firstValue)
