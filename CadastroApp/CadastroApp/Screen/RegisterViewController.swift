@@ -9,7 +9,23 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
-    let services = Services()
+    let services: Services
+    
+    init(sevices: Services) {
+        self.services = sevices
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        configureViews()
+        configureContraints()
+    }
     
     let containerView: UIView = {
         let containerView = UIView()
@@ -116,13 +132,6 @@ class RegisterViewController: UIViewController {
         return registerButton
     }()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        configureViews()
-        configureContraints()
-    }
-
     private func configureViews() {
         view.addSubview(containerView)
         
@@ -135,7 +144,7 @@ class RegisterViewController: UIViewController {
         
         emailTextField.keyboardType = .emailAddress
         emailTextField.autocapitalizationType = .none
-        nameTextField.autocorrectionType = .no
+        emailTextField.autocorrectionType = .no
         
         passwordTextField.keyboardType = .default
         passwordTextField.autocapitalizationType = .none
@@ -155,13 +164,12 @@ class RegisterViewController: UIViewController {
         containerView.addSubview(registerButton)
     }
     
-    @objc func tappedRegisterButton(sender: UIButton!){
+    @objc func tappedRegisterButton(sender: UIButton!) throws{
         let userData = ["name": nameTextField.text, "email": emailTextField.text, "password": passwordTextField.text]
-
-        self.services.storageSetItem(
-            key: emailTextField.text!,
-            value: String(describing: userData)
-        )
+        let jsonData = try JSONEncoder().encode(userData)
+        
+        services.storageSetItem(key: emailTextField.text!, value: String(data: jsonData, encoding: .utf8)!)
+        navigationController?.popViewController(animated: true)
     }
     
     func validateForm() {
@@ -246,7 +254,12 @@ extension RegisterViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         
         if(registerButton.isEnabled){
-            self.tappedRegisterButton(sender: registerButton)
+            do {
+                try self.tappedRegisterButton(sender: registerButton)
+            } catch {
+                print(">>> tappedRegisterButton.error: \(error)")
+            }
+           
         }
         
         return true

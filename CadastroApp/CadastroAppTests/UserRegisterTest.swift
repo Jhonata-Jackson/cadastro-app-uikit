@@ -32,6 +32,7 @@ final class UserRegisterTest: XCTestCase {
     
     func testGetAllUsersRegisters() throws {
         let sut = Services()
+        sut.storageClear()
 
         let firstKey = "firstKey"
         let secondKey = "secondKey"
@@ -44,7 +45,7 @@ final class UserRegisterTest: XCTestCase {
         sut.storageSetItem(key: firstKey, value: String(data: firstJsonData, encoding: .utf8)!)
         sut.storageSetItem(key: secondKey, value: String(data: secondJsonData, encoding: .utf8)!)
         
-        let values = try sut.storageGetAll()
+        let values = try sut.getAllRegisters()
         print(">>>>> values: \(values)")
 
        
